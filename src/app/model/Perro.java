@@ -3,7 +3,7 @@ package app.model;
 public class Perro extends Mascota{
 
 
-  public Perro(String nombre, int edad, String raza, String comportamiento, String ID) {
+  public Perro(String nombre, int edad, String raza, Comportamiento comportamiento, String ID) {
     super(nombre, edad, raza, comportamiento, ID);
   }
 
@@ -11,6 +11,12 @@ public class Perro extends Mascota{
 
   @Override
   public String tipoMascota() {
-    return "";
+    return "Perro";
+  }
+
+  @Override
+  public void mostrarFicha() {
+    super.mostrarFicha();
+    log.info("Tipo: Perro");
   }
 }

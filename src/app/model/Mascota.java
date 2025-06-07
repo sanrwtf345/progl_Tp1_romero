@@ -1,14 +1,17 @@
 package app.model;
 
+import java.util.logging.Logger;
+
 public abstract class Mascota {
+ protected final Logger log = Logger.getLogger(Mascota.class.getName());
 
   private String nombre;
   private int edad;
   private String raza;
-  private String comportamiento;
+  private Comportamiento comportamiento;
   private final String ID;
 
-  public Mascota(String nombre, int edad, String raza, String comportamiento, String ID){
+  public Mascota(String nombre, int edad, String raza, Comportamiento comportamiento, String ID){
     this.nombre = nombre;
     this.edad = edad;
     this.raza = raza;
@@ -16,7 +19,12 @@ public abstract class Mascota {
     this.ID = ID;
   }
 
-  //setters
+//Setters
+
+
+  public void setComportamiento(Comportamiento comportamiento) {
+    this.comportamiento = comportamiento;
+  }
 
   public void setNombre(String nombre) {
     this.nombre = nombre;
@@ -30,25 +38,22 @@ public abstract class Mascota {
     this.raza = raza;
   }
 
-  public void setComportamiento(String comportamiento) {
-    this.comportamiento = comportamiento;
-  }
+  //Getters
 
-  //getters
-
-  public String getNombre() {
-    return nombre;
-  }
 
   public int getEdad() {
     return edad;
+  }
+
+  public String getNombre() {
+    return nombre;
   }
 
   public String getRaza() {
     return raza;
   }
 
-  public String getComportamiento() {
+  public Comportamiento getComportamiento() {
     return comportamiento;
   }
 
@@ -56,7 +61,13 @@ public abstract class Mascota {
     return ID;
   }
 
- public void mostrarFicha(){}
+  public void mostrarFicha(){
+    log.info("Nombre: " + nombre);
+    log.info("Edad: " + edad);
+    log.info("Raza: " + raza);
+    log.info("Comportamiento: " + comportamiento);
+    log.info("ID: " + ID);
+  }
 
   abstract String tipoMascota();
 }

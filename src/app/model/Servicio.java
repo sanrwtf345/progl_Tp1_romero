@@ -1,8 +1,11 @@
 package app.model;
 
+import java.util.logging.Logger;
+
 public interface Servicio {
 
-  void aplicarServicio();
+  void aplicarServicio(Mascota m);
 
-  double calcularPrecio();
+  double calcularPrecio(Mascota m);
+
 }
