@@ -19,6 +19,11 @@ public class Turno {
     this.fecha = fecha;
   }
 
+  // Constructor sobrecargado con fecha automática
+  public Turno(Mascota mascota, Duenio duenio, Servicio servicio) {
+    this(mascota, duenio, servicio, LocalDate.now());
+  }
+
   //setters
 
   public void setMascota(Mascota mascota) {
@@ -62,7 +67,8 @@ public class Turno {
   public void mostrarDetalle() {
     mascota.mostrarFicha();
     log.info("Servicio: " + servicio.getClass().getSimpleName());
-    log.info("Costo: $" + servicio.calcularPrecio(mascota));
+    double precio = servicio.calcularPrecio(mascota);
+    log.info("Costo: $" + precio);
   }
 
 }

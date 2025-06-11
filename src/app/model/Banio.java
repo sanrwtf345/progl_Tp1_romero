@@ -2,7 +2,7 @@ package app.model;
 
 import java.util.logging.Logger;
 
-public class Banio implements Servicio{
+public class Banio implements Servicio {
 
   private static final Logger log = Logger.getLogger(Banio.class.getName());
 

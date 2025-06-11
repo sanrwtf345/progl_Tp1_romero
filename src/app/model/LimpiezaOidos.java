@@ -2,13 +2,13 @@ package app.model;
 
 import java.util.logging.Logger;
 
-public class LimpiezaOidos implements Servicio{
+public class LimpiezaOidos implements Servicio {
 
   private static final Logger log = Logger.getLogger(LimpiezaOidos.class.getName());
 
   @Override
   public void aplicarServicio(Mascota m) {
-    log.info("Aplicando corte de pelo a " + m.getNombre());
+    log.info("Aplicando limpieza de oidos a " + m.getNombre());
   }
 
   @Override

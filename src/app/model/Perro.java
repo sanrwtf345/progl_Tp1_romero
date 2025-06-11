@@ -1,6 +1,6 @@
 package app.model;
 
-public class Perro extends Mascota{
+public class Perro extends Mascota {
 
 
   public Perro(String nombre, int edad, String raza, Comportamiento comportamiento, String ID) {

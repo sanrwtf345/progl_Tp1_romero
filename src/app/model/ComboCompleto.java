@@ -29,7 +29,9 @@ public class ComboCompleto implements Servicio {
     for (Servicio s : servicios) {
       total += s.calcularPrecio(m);
     }
-    log.info("Precio total del combo completo: $" + total);
+    double totalConDescuento = total * 0.9; // aplica 10% de descuento
+    log.info("Precio total del combo completo para " + m.getNombre()
+        + " es de $" + totalConDescuento);
     return total;
   }
 }

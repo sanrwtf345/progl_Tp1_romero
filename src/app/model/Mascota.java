@@ -3,7 +3,7 @@ package app.model;
 import java.util.logging.Logger;
 
 public abstract class Mascota {
- protected final Logger log = Logger.getLogger(Mascota.class.getName());
+  protected final Logger log = Logger.getLogger(Mascota.class.getName());
 
   private String nombre;
   private int edad;
@@ -11,7 +11,7 @@ public abstract class Mascota {
   private Comportamiento comportamiento;
   private final String ID;
 
-  public Mascota(String nombre, int edad, String raza, Comportamiento comportamiento, String ID){
+  public Mascota(String nombre, int edad, String raza, Comportamiento comportamiento, String ID) {
     this.nombre = nombre;
     this.edad = edad;
     this.raza = raza;
@@ -19,7 +19,7 @@ public abstract class Mascota {
     this.ID = ID;
   }
 
-//Setters
+  //Setters
 
 
   public void setComportamiento(Comportamiento comportamiento) {
@@ -61,7 +61,7 @@ public abstract class Mascota {
     return ID;
   }
 
-  public void mostrarFicha(){
+  public void mostrarFicha() {
     log.info("Nombre: " + nombre);
     log.info("Edad: " + edad);
     log.info("Raza: " + raza);
@@ -69,5 +69,5 @@ public abstract class Mascota {
     log.info("ID: " + ID);
   }
 
-  abstract String tipoMascota();
+  public abstract String tipoMascota();
 }
