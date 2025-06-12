@@ -70,4 +70,17 @@ public abstract class Mascota {
   }
 
   public abstract String tipoMascota();
+
+  @Override
+  public int hashCode() {
+    return ID.hashCode();
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) return true;
+    if (obj == null || getClass() != obj.getClass()) return false;
+    Mascota other = (Mascota) obj;
+    return ID.equals(other.getID());
+  }
 }

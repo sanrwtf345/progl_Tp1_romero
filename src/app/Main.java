@@ -1,7 +1,6 @@
 package app;
 
 import app.model.*;
-
 import java.time.LocalDate;
 import java.util.Scanner;
 import java.util.logging.Logger;
@@ -30,7 +29,7 @@ public class Main {
     // Crear turno
     Turno turno1 = new Turno(firulais, ana, banio, LocalDate.now());
     Turno turno2 = new Turno(michi, pedro, combo, LocalDate.now());
-    Turno turno3 = new Turno(firulais, ana, new ComboCompleto()); // Fecha se autogenera sobre
+    Turno turno3 = new Turno(firulais, ana, new ComboCompleto()); // La fecha se autogenera
     turno3.confirmarTurno();
     Scanner sc = new Scanner(System.in);
 

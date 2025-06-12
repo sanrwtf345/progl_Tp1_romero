@@ -34,4 +34,14 @@ public class ComboCompleto implements Servicio {
         + " es de $" + totalConDescuento);
     return total;
   }
+
+  @Override
+  public int hashCode() {
+    return getClass().hashCode();
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    return this == obj || (obj != null && getClass() == obj.getClass());
+  }
 }

@@ -1,6 +1,7 @@
 package app.model;
 
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.logging.Logger;
 
 public class Turno {
@@ -69,6 +70,26 @@ public class Turno {
     log.info("Servicio: " + servicio.getClass().getSimpleName());
     double precio = servicio.calcularPrecio(mascota);
     log.info("Costo: $" + precio);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(mascota.getID(), duenio.getNombre(),
+        fecha, servicio.getClass().getSimpleName());
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) return true;
+    if (obj == null || getClass() != obj.getClass()) return false;
+    Turno other = (Turno) obj;
+    return mascota.getID().equals(other.mascota.getID())
+        &&
+        duenio.getNombre().equals(other.duenio.getNombre())
+        &&
+        fecha.equals(other.fecha)
+        &&
+        servicio.getClass().equals(other.servicio.getClass());
   }
 
 }
